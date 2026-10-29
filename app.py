@@ -55,7 +55,7 @@ def simple_electricity_calc(appliance_text, days_per_month, unit_price):
 # ---------------- การจัดหน้าเว็บ UI ด้วย Streamlit ----------------
 st.set_page_config(page_title="Simple Electricity Calculator", page_icon="⚡", layout="wide")
 st.title("⚡ โปรแกรมคำนวณค่าไฟแบบง่าย (Simple Electricity Calculator)⚡")
-st.markdown("รูปแบบการกรอก: **`ชื่ออุปกรณ์, กำลังวัตต์(W), จำนวนเครื่อง, ชั่วโมงที่ใช้ต่อวัน`**🤔")
+st.markdown("รูปแบบการกรอก: **`ชื่ออุปกรณ์, กำลังวัตต์(W), จำนวนเครื่อง, ชั่วโมงที่ใช้ต่อวัน`** 🤔")
 
 default_appliances = "แอร์ 12000 BTU, 1200, 1, 8\nพัดลม, 50, 2, 8\nหลอดไฟ, 10, 4, 6"
 
