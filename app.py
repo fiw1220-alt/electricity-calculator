@@ -32,13 +32,13 @@ def simple_electricity_calc(appliance_text, days_per_month, unit_price):
     total_cost = total_kwh_month * unit_price
 
     if total_kwh_month <= 150:
-        status = "🟢 ระดับประหยัด (Low)"
+        status = "🟢 ระดับประหยัด (Low) 😁"
     elif total_kwh_month <= 400:
-        status = "🟡 ระดับปานกลาง (Moderate)"
+        status = "🟡 ระดับปานกลาง (Moderate) 🙂"
     else:
-        status = "🔴 ระดับสูง (High) ควรลดการใช้แอร์เพื่อประหยัดค่าไฟ"
+        status = "🔴 ระดับสูง (High) ☠️"
 
-    report = f"""### 📊 สรุปค่าไฟฟ้าประจำเดือน ({days_per_month} วัน)
+    report = f"""### 📆 สรุปค่าไฟฟ้า ({days_per_month} วัน)
 **ระดับการใช้ไฟ:** {status}
 
 #### 🔌 ปริมาณการใช้ไฟแต่ละอุปกรณ์
@@ -48,13 +48,13 @@ def simple_electricity_calc(appliance_text, days_per_month, unit_price):
 #### 💰 สรุปค่าใช้จ่าย
 * **หน่วยไฟฟ้ารวม:** `{total_kwh_month:,.2f}` หน่วย (kWh)
 * **ราคาไฟที่กำหนด:** `{unit_price:,.2f}` บาท/หน่วย
-* 🏆 **รวมค่าไฟฟ้าที่ต้องจ่าย:** **`{total_cost:,.2f}` บาท**
+* 🧾 **รวมค่าไฟฟ้าที่ต้องจ่าย:** **`{total_cost:,.2f}` บาท**
 """
     return report
 
 # ---------------- การจัดหน้าเว็บ UI ด้วย Streamlit ----------------
-st.set_page_config(page_title="Smart Electricity Calculator", page_icon="⚡", layout="wide")
-st.title("⚡ โปรแกรมคำนวณค่าไฟแบบง่าย (Simple Electricity Calculator)")
+st.set_page_config(page_title="Simple Electricity Calculator", page_icon="⚡", layout="wide")
+st.title("⚡ โปรแกรมคำนวณค่าไฟแบบง่าย (Simple Electricity Calculator)⚡")
 st.markdown("รูปแบบการกรอก: **`ชื่ออุปกรณ์, กำลังวัตต์(W), จำนวนเครื่อง, ชั่วโมงที่ใช้ต่อวัน`**")
 
 default_appliances = "แอร์ 12000 BTU, 1200, 1, 8\nพัดลม, 50, 2, 8\nหลอดไฟ, 10, 4, 6"
@@ -65,7 +65,7 @@ with col1:
     app_input = st.text_area("รายการเครื่องใช้ไฟฟ้า", value=default_appliances, height=150)
     days_input = st.slider("จำนวนวันในรอบบิล", min_value=1, max_value=31, value=30)
     price_input = st.number_input("ค่าไฟ (บาท/หน่วย)", value=4.50, step=0.1)
-    calc_btn = st.button("🚀 คำนวณค่าไฟ", type="primary")
+    calc_btn = st.button("🚀 คำนวณค่าไฟ 🚀", type="primary")
 
 with col2:
     st.markdown("### ผลลัพธ์การคำนวณ")
